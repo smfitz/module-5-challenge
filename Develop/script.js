@@ -1,4 +1,3 @@
-// var moment = require("moment");
 
 $(document).ready(function () {
     $('.saveBtn').on('click', function () {
@@ -14,6 +13,7 @@ $(document).ready(function () {
     });
 
     function hourUpdater() {
+
         var currentHour = moment().hours();
 
         $('.time-block').each(function () {
@@ -33,6 +33,18 @@ $(document).ready(function () {
              }
             });
         }
+
+
+    window.setInterval(function () {
+        $('#currentDay').html(moment().format('ddd MM/DD/y H:mm:ss'))
+    }, 1000);
+
+
+    // function currentDay() {
+    //     moment().format("MMM Do YY"); 
+    //     console.log(currentDay);
+    // }
+    
 
     hourUpdater();
 
